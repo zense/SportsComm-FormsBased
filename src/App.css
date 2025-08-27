@@ -1,0 +1,222 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e6edf7; /* slightly brighter than #f4f6f8 */
+  color: #2c3e50; /* darker for better contrast */
+  overflow: hidden; /* Disable body scrolling */
+}
+
+/* Dashboard container */
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: #1f2d3d; /* slightly richer dark color */
+}
+
+.dashboard-header button {
+  background: #4d90ff; /* brighter blue */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dashboard-header button:hover {
+  background: #3571e0;
+  transform: translateY(-1px);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  padding: 8px 12px;
+  border: 1px solid #b0c4de; /* softer but visible border */
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: #4d90ff; /* matches header button */
+  box-shadow: 0 0 6px rgba(77, 144, 255, 0.4);
+}
+
+.filters button {
+  background: #4d90ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.filters button:hover {
+  background: #3571e0;
+  transform: translateY(-1px);
+}
+
+/* Table */
+.table-container {
+  background: white;
+  border-radius: 10px; /* slightly softer */
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 180px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* stronger shadow for depth */
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+thead {
+  background: #dce6f2; /* brighter header row */
+}
+
+th,
+td {
+  padding: 14px 18px; /* slightly larger spacing */
+  text-align: left;
+  border-bottom: 1px solid #d0dbe8; /* softer lines */
+  font-size: 0.95rem;
+}
+
+th {
+  font-weight: 600;
+  color: #1f2d3d;
+}
+
+tbody tr:nth-child(even) {
+  background: #f2f7fc; /* subtle blue tint for even rows */
+}
+
+tbody tr:hover {
+  background: #e0f0ff; /* subtle highlight on hover */
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  gap: 12px;
+}
+
+.pagination button {
+  background: #4d90ff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #3571e0;
+  transform: translateY(-1px);
+}
+
+.pagination button:disabled {
+  background: #a0c1ff;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 0.95rem;
+  color: #1f2d3d;
+}
+
+/* Dashboard Actions */
+.dashboard-actions {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  background-color: #57b960; /* vibrant, professional green */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 6px rgba(87, 185, 96, 0.4);
+}
+
+.action-btn:hover {
+  background-color: #3f9745;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 151, 69, 0.4);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+  background-color: #2c6b32;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
